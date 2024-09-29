@@ -1,12 +1,12 @@
-name: CI/CD for dev
+name: CI/CD for test
 
 on:
   push:
     branches:
-      - development
+      - test
   pull_request:
     branches:
-      - development
+      - test
 
 permissions:
   contents: read

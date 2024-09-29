@@ -16,6 +16,7 @@ export const viteConfig = defineConfig(({ mode }) => {
       sourcemap: isProd ? false : 'inline',
       terserOptions: configureTerser(isProd)
     },
+    base: 'wisest',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
