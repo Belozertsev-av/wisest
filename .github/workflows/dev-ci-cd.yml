@@ -39,7 +39,7 @@ jobs:
 
   deploy:
     environment:
-      name: github-pages
+      name: dev
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build-and-test
     runs-on: ubuntu-latest
