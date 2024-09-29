@@ -1,0 +1,21 @@
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${YELLOW}=== ⌛ Unit testing ===============================${NC}"
+yarn vitest run --passWithNoTests
+
+if [ $? -ne 0 ]; then
+  echo -e "${RED}=== ⛔ Failed ==="
+  exit 1
+fi
+
+echo -e "${GREEN}=== ✅ Succeed ==="
+
+echo -e "${YELLOW}=== ⌛ E2E testing ================================${NC}"
+yarn test:e2e
+
+echo -e "${GREEN}=== ✅ Succeed ==="
+
+echo -e "${GREEN}=== ✅ All check passed successfully ==================${NC}"
