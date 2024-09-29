@@ -7,6 +7,9 @@ import { configureTerser } from './config/vite'
 
 export const viteConfig = defineConfig(({ mode }) => {
   const isProd = mode === 'production'
+  const isTest = mode === 'test'
+
+  const base = () => (isProd ? '/wisest' : isTest ? '/test/wisest' : '/dev/wisest')
 
   return {
     plugins: [vue(), vueJsx()],
@@ -16,7 +19,7 @@ export const viteConfig = defineConfig(({ mode }) => {
       sourcemap: isProd ? false : 'inline',
       terserOptions: configureTerser(isProd)
     },
-    base: 'wisest',
+    base: base(),
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
