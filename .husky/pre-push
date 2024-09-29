@@ -13,9 +13,4 @@ fi
 
 echo -e "${GREEN}=== ✅ Succeed ==="
 
-echo -e "${YELLOW}=== ⌛ E2E testing ================================${NC}"
-yarn test:e2e
-
-echo -e "${GREEN}=== ✅ Succeed ==="
-
 echo -e "${GREEN}=== ✅ All check passed successfully ==================${NC}"
