@@ -2,6 +2,29 @@
 @import "fonts.css";
 
 :root {
+  --fs-label: 10pt;
+  --fs-label-large: 11pt;
+  --fs-body: 12pt;
+  --fs-subtitle: 14pt;
+  --fs-subtitle-large: 16pt;
+  --fs-title: 18pt;
+  --fs-title-large: 20pt;
+  --fs-headline: 26pt;
+
+  --r-medium: 1rem;
+  --r-small: 0.5rem;
+  --r-extra-small: 0.25rem;
+
   font-family: "Noto Sans", sans-serif;
-  font-size: 14pt;
+  font-size: var(--fs-body);
+}
+
+body, #app, .wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.dark {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
 }
