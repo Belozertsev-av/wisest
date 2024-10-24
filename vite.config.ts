@@ -14,12 +14,19 @@ export const viteConfig = defineConfig(({ mode }) => {
       minify: isProd ? 'terser' : false,
       cssMinify: isProd ? 'esbuild' : false,
       sourcemap: isProd ? false : 'inline',
-      terserOptions: configureTerser(isProd)
+      terserOptions: isProd ? configureTerser() : undefined
     },
-    base: '/wisest',
+    base: '/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
       }
     }
   }

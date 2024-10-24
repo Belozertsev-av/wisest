@@ -1,16 +1,16 @@
-import './styles/index.scss'
+import "./styles/index.scss"
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue"
+import { createPinia } from "pinia"
 
-import App from './App.vue'
-import { router } from '@/app/providers'
+import App from "./App.vue"
+import { router } from "@/app/providers"
 
-export { default as App } from './App.vue'
+export { default as App } from "./App.vue"
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
-app.mount('#app')
+app.mount("#app")
