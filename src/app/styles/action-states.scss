@@ -1,0 +1,29 @@
+@mixin action-states($hover-bg, $border-radius: var(--r-small)) {
+  $opacity-hover: 0.2;
+  $opacity-active-focus: 0.3;
+
+  &:hover:not(&:disabled) {
+    &::after {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-color: $hover-bg;
+      border-radius: $border-radius;
+      opacity: $opacity-hover;
+    }
+  }
+
+  &:active:not(&:disabled),
+  &:focus:not(&:disabled) {
+    &::after {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-color: $hover-bg;
+      border-radius: $border-radius;
+      opacity: $opacity-active-focus;
+    }
+  }
+}

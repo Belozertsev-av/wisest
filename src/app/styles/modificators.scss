@@ -1,0 +1,100 @@
+@import "action-states";
+
+.w-headline {
+  font-size: var(--fs-headline);
+  font-weight: bold;
+}
+
+.w-title-large {
+  font-size: var(--fs-title-large);
+}
+
+.w-title {
+  font-size: var(--fs-title);
+  font-weight: bold;
+}
+
+.w-subtitle-large {
+  font-size: var(--fs-subtitle-large);
+}
+
+.w-subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: bold;
+}
+
+.w-body {
+  font-size: var(--fs-body);
+}
+
+.w-label-large {
+  font-size: var(--fs-label-large);
+}
+
+.w-label {
+  font-size: var(--fs-label);
+  font-weight: bold;
+}
+
+.spacing-square-min {
+  padding: 0.25rem;
+}
+
+.spacing-square-normal {
+  padding: 0.5rem;
+}
+
+.spacing-square-max {
+  padding: 0.75rem;
+}
+
+.spacing-rectangle-min {
+  padding: 0.25rem 0.75rem;
+}
+
+.spacing-rectangle-normal {
+  padding: 0.5rem 1rem;
+}
+
+.spacing-rectangle-max {
+  padding: 0.75rem 1.25rem;
+}
+
+.radius-extra-small {
+  border-radius: var(--r-extra-small);
+}
+
+.radius-small {
+  border-radius: var(--r-small);
+}
+
+.radius-medium {
+  border-radius: var(--r-medium);
+}
+
+.btn-filled {
+  color: var(--color-on-primary-container);
+  background: var(--color-primary-container);
+  background: linear-gradient(-45deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+
+  @include action-states(var(--color-primary));
+}
+
+.btn-tonal {
+  color: var(--color-on-secondary-container);
+  background: var(--color-secondary-container);
+  background: linear-gradient(
+    -45deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary-container) 100%
+  );
+
+  @include action-states(var(--color-secondary));
+}
+
+.btn-text {
+  color: var(--color-on-surface);
+  background: none;
+
+  @include action-states(var(--color-on-surface));
+}

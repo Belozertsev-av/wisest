@@ -23,9 +23,21 @@ body,
 .wrapper {
   width: 100%;
   height: 100%;
+  font-size: var(--fs-body);
 }
 
 .dark {
   color: var(--color-on-background);
   background-color: var(--color-background);
+}
+
+.container {
+  max-width: 80%;
+  height: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @media screen and (width <= 1366px) {
+    max-width: 100%;
+  }
 }

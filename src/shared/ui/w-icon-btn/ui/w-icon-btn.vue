@@ -1,26 +1,20 @@
 <template>
   <button
-    class="btn w-body"
+    class="btn"
     :disabled="props.disabled"
-    :class="`btn-${props.variant} spacing-rectangle-${props.spacing} radius-${props.radius}`"
+    :class="`btn-${props.variant} spacing-square-${props.spacing} radius-${props.radius}`"
   >
-    <span v-if="props.prependIcon !== 'none'" class="btn__prepend-icon">
-      <w-icon :size="props.iconSize" :icon="props.prependIcon" />
-    </span>
-    <slot name="default" />
-    <span v-if="props.appendIcon !== 'none'" class="btn__append-icon">
-      <w-icon :size="props.iconSize" :icon="props.appendIcon" />
-    </span>
+    <w-icon :size="props.iconSize" :icon="props.icon" />
   </button>
 </template>
 
 <script setup lang="ts">
-import { type Radius, type Spacing, type Variant, WIcon } from "@/shared/ui"
+import { WIcon } from "@/shared/ui/w-icon"
+import type { Radius, Spacing, Variant } from "@/shared/ui"
 
 const props = withDefaults(
   defineProps<{
-    appendIcon?: string
-    prependIcon?: string
+    icon: string
     variant?: Variant
     iconSize?: string
     disabled?: boolean
@@ -28,9 +22,7 @@ const props = withDefaults(
     radius?: Radius
   }>(),
   {
-    appendIcon: "none",
-    prependIcon: "none",
-    variant: "tonal",
+    variant: "text",
     iconSize: "1.5rem",
     disabled: false,
     spacing: "min",
