@@ -1,1 +1,1 @@
-export { default as WIconBtn } from "./ui/w-icon-btn.vue"
+export { default as WIconBtn } from "./w-icon-btn.vue"
